@@ -21,9 +21,33 @@ El patrón Singleton garantiza que una clase tenga solo una instancia y proporci
 Singleton es el más simple en términos de su diagrama de clases porque solo hay una sola clase, su implementación es un poco más complicada.
 </p>
 </pre>
-<li><a href="#factory-method">Factory Method</a></li>
-<li><a href="#abstract-factory">Abstract Factory</a></li>
 <li><a href="#builder">Builder</a></li>
+<pre>
+<p>
+La intención del Patrón Constructor es separar la construcción de un objeto complejo de su representación, para que el mismo
+proceso de construcción puede crear diferentes representaciones. Este tipo de separación reduce el tamaño del objeto. El diseño resulta
+ser más modular con cada implementación contenida en un objeto constructor diferente. Agregar una nueva implementación (es decir, agregar un
+nuevo constructor) se vuelve más fácil. El proceso de construcción del objeto se vuelve independiente de los componentes que forman el objeto.
+Esto proporciona más control sobre el proceso de construcción de objetos.
+En términos de implementación, cada uno de los diferentes pasos en el proceso de construcción se puede declarar como métodos de un común
+Interfaz a implementar por diferentes constructores de hormigón.
+</p>
+<p>
+     Un objeto de cliente puede crear una instancia de un constructor concreto e invocar el conjunto de métodos necesarios para construir diferentes partes de el objeto final. Este enfoque requiere que cada objeto del cliente sea consciente de la lógica de construcción. Siempre que la lógica de construcción sufre un cambio, todos los objetos del cliente deben modificarse en consecuencia.
+</p>
+<p>
+     El patrón Builder introduce otro nivel de separación que aborda este problema. En lugar de hacer que los objetos del cliente invoquen
+diferentes métodos de construcción directamente, el patrón de construcción sugiere usar un objeto dedicado denominado Director, que es
+responsable de invocar diferentes métodos constructores necesarios para la construcción del objeto final. Diferentes objetos de cliente pueden
+hacer uso del objeto Director para crear el objeto requerido. Una vez que se construye el objeto, el objeto del cliente puede solicitar directamente del constructor el objeto completamente construido. Para facilitar este proceso, se puede declarar un nuevo método getObject en el Interfaz de constructor común para ser implementada por diferentes constructores concretos.
+</p>
+<p>
+El nuevo diseño elimina la necesidad de que un objeto del cliente se ocupe de los métodos que constituyen el proceso de construcción del objeto y encapsula los detalles de cómo se construye el objeto desde el cliente.
+</p>
+</pre>
+
+  <li><a href="#factory-method">Factory Method</a></li>
+<li><a href="#abstract-factory">Abstract Factory</a></li>
 <li><a href="#prototype">Prototype</a></li>
 </ul>
 
