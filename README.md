@@ -99,13 +99,19 @@ Por otro lado, la abstracción se ampliará con una abstracción más refinada.
 
 
 <ul dir="auto">
+<li><a href="#singleton">Observer (Observador)</a></li>
+<pre>
+<p> Observer es un patrón de diseño de software que define una dependencia del tipo uno a muchos entre objetos, de manera que cuando uno de los objetos cambia su estado, notifica este cambio a todos los dependientes. Se trata de un patrón de comportamiento </p>
+<p>Veamos cómo usar el patrón de observador para desarrollar la función para Sport Lobby. Alguien actualizará el hormigón.
+objeto del sujeto y su trabajo es actualizar el estado del objeto registrado con el objeto sujeto concreto. Entonces, siempre que haya
+un cambio en el estado del objeto del sujeto concreto, todos sus objetos dependientes deben ser notificados y luego actualizados.</p>
+</pre>
 <li><a href="#factory-method">Chain of Responsibility (Cadena de responsabilidad)</a></li>
 <li><a href="#abstract-factory">Command (Orden)</a></li>
 <li><a href="#builder">Interpreter (Intérprete)</a></li>
 <li><a href="#builder">Iterator (Iterador)</a></li>
 <li><a href="#prototype">Mediator (Mediador)</a></li>
 <li><a href="#singleton">Memento (Recuerdo)</a></li>
-<li><a href="#singleton">Observer (Observador)</a></li>
 <li><a href="#singleton">State (Estado)</a></li>
 <li><a href="#singleton">Strategy (Estrategia)</a></li>
 <li><a href="#singleton">Template Method (Método plantilla)</a></li>
