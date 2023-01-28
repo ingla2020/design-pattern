@@ -128,7 +128,18 @@ ayuda a reducir la complejidad de las clases. Cada objeto ya no tiene que saber 
 objetos. El acoplamiento entre objetos va de apretado y quebradizo a suelto y ágil.
 Antes de Mediator, la interacción entre las clases podría verse así, con referencias entre sí
 </pre>
+
 <li><a href="#factory-method">Chain of Responsibility (Cadena de responsabilidad)</a></li>
+<pre>
+La intención de este patrón es evitar acoplar al remitente de una solicitud con su receptor dando a más de un objeto la oportunidad de
+manejar la solicitud. Encadenamos los objetos receptores y pasamos la solicitud a lo largo de la cadena hasta que un objeto la maneje.
+Este patrón se trata de conectar objetos en una cadena de notificación; a medida que una notificación viaja por la cadena, es manejada por el
+primer objeto que se configura para tratar con la notificación en particular.
+Cuando hay más de un objeto que puede manejar o cumplir con una solicitud del cliente, el patrón recomienda dar a cada uno de estos
+objeta la oportunidad de procesar la solicitud en algún orden secuencial. Aplicando el patrón en tal caso, cada uno de estos potenciales los manipuladores se pueden organizar en forma de cadena, en la que cada objeto tiene una referencia al siguiente objeto de la cadena. El primero
+El objeto de la cadena recibe la solicitud y decide gestionarla o pasarla al siguiente objeto de la cadena. Él la solicitud fluye a través de todos los objetos de la cadena, uno tras otro, hasta que la solicitud es manejada por uno de los controladores de la cadena
+o la solicitud llega al final de la cadena sin ser procesada.
+</pre>
 <li><a href="#abstract-factory">Command (Orden)</a></li>
 <li><a href="#builder">Interpreter (Intérprete)</a></li>
 <li><a href="#builder">Iterator (Iterador)</a></li>
