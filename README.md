@@ -2,15 +2,37 @@
 Patrones de Diseño
 <article class="markdown-body entry-content container-lg" itemprop="text"><h1 dir="auto"><a id="user-content-design-pattern" class="anchor" aria-hidden="true" href="#design-pattern"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>design-pattern</h1>
 <p dir="auto">Patrones de Diseño</p>
-<p dir="auto">Creational -creacionales </p>
+
+
+<h2><p dir="auto">Creational -creacionales </p></h2>
+
+
 <ul dir="auto">
+<li><a href="#singleton">Singleton</a></li>
+<pre>
+<p>
+A veces es importante que algunas clases tengan exactamente una instancia. Hay muchos objetos, solo necesitamos una instancia.
+de ellos y si instanciamos más de uno, nos encontraremos con todo tipo de problemas como el comportamiento incorrecto del programa, el uso excesivo de
+recursos o resultados inconsistentes.
+Puede requerir solo un objeto de una clase, por ejemplo, cuando está creando el contexto de una aplicación o un hilo
+grupo manejable, configuraciones de registro, un controlador para conectarse a la consola de entrada o salida, etc. Más de un objeto de ese tipo
+claramente causará inconsistencia en su programa.
+El patrón Singleton garantiza que una clase tenga solo una instancia y proporciona un punto de acceso global a ella. Sin embargo aunque
+Singleton es el más simple en términos de su diagrama de clases porque solo hay una sola clase, su implementación es un poco más complicada.
+</p>
+</pre>
 <li><a href="#factory-method">Factory Method</a></li>
 <li><a href="#abstract-factory">Abstract Factory</a></li>
 <li><a href="#builder">Builder</a></li>
 <li><a href="#prototype">Prototype</a></li>
-<li><a href="#singleton">Singleton</a></li>
 </ul>
-<p dir="auto">Structural - estructurales </p>
+
+
+
+<h2><p dir="auto">Structural - estructurales </p></h2>
+
+
+
 <ul dir="auto">
 <!--adapter-->
 <li><a href="#factory-method">Adapter o Wrapper</a></li>
@@ -71,7 +93,11 @@ Por otro lado, la abstracción se ampliará con una abstracción más refinada.
 <li><a href="#singleton">Proxy</a></li>
 <li><a href="#singleton">Module</a></li>
 </ul>
-<p dir="auto">Behavioral - comportamiento </p>
+
+
+<h2><p dir="auto">Behavioral - comportamiento </p></h2>
+
+
 <ul dir="auto">
 <li><a href="#factory-method">Chain of Responsibility (Cadena de responsabilidad)</a></li>
 <li><a href="#abstract-factory">Command (Orden)</a></li>
