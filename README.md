@@ -23,8 +23,25 @@ Proposito
 <pre>
 Fachada (Facade) es un tipo de patrón de diseño estructural. Viene motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.
 </pre>
-<li><a href="#abstract-factory">Bridge (Puente)</a></li>
 <li><a href="#builder">Composite (Objeto compuesto)</a></li>
+<pre>
+<p>
+La definición formal del patrón compuesto dice que le permite componer objetos en estructuras de árbol para representar jerarquías parciales y completas. Composite permite a los clientes tratar objetos individuales y composiciones de objetos de manera uniforme.
+Si está familiarizado con una estructura de datos de árbol, sabrá que un árbol tiene padres y sus hijos. Puede haber varios niños para
+un padre, pero sólo un padre por hijo. En el patrón compuesto, los elementos con hijos se denominan nodos y los elementos sin
+los niños se llaman como Leafs.
+El Patrón Compuesto nos permite construir estructuras de objetos en forma de árboles que contienen tanto composición de objetos como
+objetos individuales como nodos. Usando una estructura compuesta, podemos aplicar las mismas operaciones tanto sobre compuestos como individuales.
+objetos. En otras palabras, en la mayoría de los casos podemos ignorar las diferencias entre composiciones de objetos y objetos individuales.
+El Patrón Compuesto tiene cuatro participantes:
+</p>
+• Component
+• Leaf
+• Composite
+• Client
+</pre>
+
+<li><a href="#abstract-factory">Bridge (Puente)</a></li>
 <li><a href="#builder">Decorator (Decorador)</a></li>
 <li><a href="#singleton">Flyweight (Peso ligero)</a></li>
 <li><a href="#singleton">Proxy</a></li>
