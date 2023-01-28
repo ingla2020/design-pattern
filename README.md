@@ -106,11 +106,22 @@ Por otro lado, la abstracción se ampliará con una abstracción más refinada.
 objeto del sujeto y su trabajo es actualizar el estado del objeto registrado con el objeto sujeto concreto. Entonces, siempre que haya
 un cambio en el estado del objeto del sujeto concreto, todos sus objetos dependientes deben ser notificados y luego actualizados.</p>
 </pre>
+
+<li><a href="#prototype">Mediator (Mediador)</a></li>
+<pre>
+El patrón de mediador define un objeto que encapsula cómo interactúa un conjunto de objetos. El mediador promueve el acoplamiento flojo al
+evita que los objetos se refieran entre sí explícitamente y le permite variar su interacción de forma independiente.
+En lugar de interactuar directamente entre sí, los objetos le piden al Mediador que interactúe en su nombre, lo que da como resultado la reutilización.
+y acoplamiento flojo. Encapsula la interacción entre los objetos y los hace independientes entre sí. Esto permite
+les permite variar su interacción con otros objetos de una manera totalmente diferente mediante la implementación de un mediador diferente. el mediador
+ayuda a reducir la complejidad de las clases. Cada objeto ya no tiene que saber en detalle cómo interactuar con el otro
+objetos. El acoplamiento entre objetos va de apretado y quebradizo a suelto y ágil.
+Antes de Mediator, la interacción entre las clases podría verse así, con referencias entre sí
+</pre>
 <li><a href="#factory-method">Chain of Responsibility (Cadena de responsabilidad)</a></li>
 <li><a href="#abstract-factory">Command (Orden)</a></li>
 <li><a href="#builder">Interpreter (Intérprete)</a></li>
 <li><a href="#builder">Iterator (Iterador)</a></li>
-<li><a href="#prototype">Mediator (Mediador)</a></li>
 <li><a href="#singleton">Memento (Recuerdo)</a></li>
 <li><a href="#singleton">State (Estado)</a></li>
 <li><a href="#singleton">Strategy (Estrategia)</a></li>
