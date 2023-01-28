@@ -47,6 +47,14 @@ El nuevo diseño elimina la necesidad de que un objeto del cliente se ocupe de l
 </pre>
 
   <li><a href="#factory-method">Factory Method</a></li>
+  <pre>
+El patrón de método de fábrica nos brinda una forma de encapsular las instancias de tipos concretos. El patrón del método de fábrica
+encapsula la funcionalidad requerida para seleccionar e instanciar una clase apropiada, dentro de un método designado denominado
+un método de fábrica. Factory Method selecciona una clase apropiada de una jerarquía de clases basada en el contexto de la aplicación y
+otros factores influyentes. Luego crea una instancia de la clase seleccionada y la devuelve como una instancia del tipo de clase principal.
+La ventaja de este enfoque es que los objetos de la aplicación pueden hacer uso del método de fábrica para obtener acceso al
+instancia de clase. Esto elimina la necesidad de que un objeto de aplicación se ocupe de los distintos criterios de selección de clases.  
+  </pre>
 <li><a href="#abstract-factory">Abstract Factory</a></li>
 <li><a href="#prototype">Prototype</a></li>
 </ul>
