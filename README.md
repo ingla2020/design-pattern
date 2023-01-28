@@ -42,6 +42,30 @@ El Patrón Compuesto tiene cuatro participantes:
 </pre>
 
 <li><a href="#abstract-factory">Bridge (Puente)</a></li>
+
+<pre>
+<p>
+Los componentes del Patrón Puente comprenden una abstracción, una abstracción refinada, un implementador y un implementador concreto.
+Una abstracción define la interfaz de la abstracción y también mantiene una referencia a un objeto de tipo implementador y el enlace
+entre la abstracción y el implementador se llama puente.
+La abstracción refinada amplía la interfaz definida por la abstracción.
+El Implementador proporciona la interfaz para las clases de implementación (implementadores concretos).
+Y el Implementador concreto implementa la interfaz del Implementador y define su implementación concreta.
+El Bridge Pattern desacopla la interfaz y la implementación. Como resultado, una implementación no está ligada permanentemente a
+una interfaz La implementación de una abstracción se puede configurar en tiempo de ejecución. También elimina las dependencias en tiempo de compilación.
+sobre la implementación. Cambiar una clase de implementación no requiere volver a compilar la clase de abstracción y sus clientes. Él
+El cliente solo necesita saber sobre la abstracción y puede ocultarles la implementación.
+</p>
+
+<b>Solución al Problema</b>
+<p>
+En lugar de crear una subclase para cada producto por modelo de automóvil en el problema discutido anteriormente, podemos separar el diseño en dos
+diferentes jerarquías. Una interfaz es para el producto que se utilizará como implementador y la otra será una abstracción.
+de tipo coche. El implementador será implementado por los implementadores concretos y proporciona una implementación para ello. Sobre el
+Por otro lado, la abstracción se ampliará con una abstracción más refinada.
+</p>
+</pre>
+
 <li><a href="#builder">Decorator (Decorador)</a></li>
 <li><a href="#singleton">Flyweight (Peso ligero)</a></li>
 <li><a href="#singleton">Proxy</a></li>
