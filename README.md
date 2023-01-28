@@ -56,6 +56,21 @@ La ventaja de este enfoque es que los objetos de la aplicación pueden hacer uso
 instancia de clase. Esto elimina la necesidad de que un objeto de aplicación se ocupe de los distintos criterios de selección de clases.  
   </pre>
 <li><a href="#abstract-factory">Abstract Factory</a></li>
+
+<pre>
+The Abstract Factory (A.K.A. Kit) es un patrón de diseño que proporciona una interfaz para crear familias de elementos relacionados o dependientes.
+objetos sin especificar sus clases concretas. El patrón Abstract Factory toma el concepto del patrón Factory Method al siguiente nivel. 
+Una fábrica abstracta es una clase que proporciona una interfaz para producir una familia de objetos. En Java, puede ser
+implementado usando una interfaz o una clase abstracta.
+El patrón Abstract Factory es útil cuando un objeto cliente quiere crear una instancia de uno de un conjunto de objetos relacionados y dependientes.
+clases sin tener que saber qué clase concreta específica se va a instanciar. Distintas fábricas de hormigón implementan el
+interfaz de fábrica abstracta. Los objetos de cliente hacen uso de estas fábricas concretas para crear objetos y, por lo tanto, no necesitan
+saber qué clase concreta se instancia realmente.
+La fábrica abstracta es útil para conectar un grupo diferente de objetos para alterar el comportamiento del sistema. Para cada grupo o
+familia, se implementa una fábrica de hormigón que gestiona la creación de los objetos y las interdependencias y consistencia
+requisitos entre ellos. Cada fábrica concreta implementa la interfaz de la fábrica abstracta
+</pre>
+
 <li><a href="#prototype">Prototype</a></li>
 </ul>
 
