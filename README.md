@@ -88,9 +88,19 @@ Por otro lado, la abstracción se ampliará con una abstracción más refinada.
 </p>
 </pre>
 
+<li><a href="#singleton">Proxy</a></li>
+<pre>
+El Patrón Proxy se usa para crear un objeto representativo que controla el acceso a otro objeto, que puede ser remoto, costoso
+para crear o en necesidad de ser asegurado.
+Una razón para controlar el acceso a un objeto es diferir el costo total de su creación e inicialización hasta que realmente necesitemos
+úsalo Otra razón podría ser actuar como representante local de un objeto que vive en una JVM diferente. El Proxy puede ser muy
+útil para controlar el acceso al objeto original, especialmente cuando los objetos deben tener diferentes derechos de acceso.
+En el Proxy Pattern, un cliente no habla directamente con el objeto original, delega sus llamadas al objeto proxy que llama al
+métodos del objeto original. El punto importante es que el cliente no sabe sobre el proxy, el proxy actúa como un original
+objeto para el cliente. Pero hay muchas variaciones de este enfoque que veremos pronto.
+</pre>
 <li><a href="#builder">Decorator (Decorador)</a></li>
 <li><a href="#singleton">Flyweight (Peso ligero)</a></li>
-<li><a href="#singleton">Proxy</a></li>
 <li><a href="#singleton">Module</a></li>
 </ul>
 
