@@ -99,8 +99,23 @@ En el Proxy Pattern, un cliente no habla directamente con el objeto original, de
 métodos del objeto original. El punto importante es que el cliente no sabe sobre el proxy, el proxy actúa como un original
 objeto para el cliente. Pero hay muchas variaciones de este enfoque que veremos pronto.
 </pre>
-<li><a href="#builder">Decorator (Decorador)</a></li>
+
 <li><a href="#singleton">Flyweight (Peso ligero)</a></li>
+<pre>
+La intención del patrón Flyweight es usar objetos compartidos para admitir una gran cantidad de objetos de granularidad fina de manera eficiente. 
+flyweight es un objeto compartido que se puede usar en múltiples contextos simultáneamente. El peso mosca actúa como un objeto independiente en
+cada contexto: es indistinguible de una instancia del objeto que no se comparte. Los Flyweights no pueden hacer suposiciones sobre
+el contexto en el que operan. El concepto clave aquí es la distinción entre estado intrínseco y extrínseco. El estado intrínseco es
+almacenado en el peso mosca; consiste en información que es independiente del contexto del peso mosca, lo que la hace compartible. Él
+el estado extrínseco depende y varía con el contexto del peso mosca y, por lo tanto, no se puede compartir. Los objetos del cliente son responsables por pasar estado extrínseco al peso mosca cuando lo necesita.
+
+Considere un escenario de aplicación que implica la creación de una gran cantidad de objetos que son únicos solo en términos de unos pocos parámetros.
+En otras palabras, estos objetos contienen algunos datos intrínsecos e invariantes que son comunes a todos los objetos. Estos datos intrínsecos necesitan ser creado y mantenido como parte de cada objeto que se está creando. La creación y el mantenimiento general de un gran grupo.
+de tales objetos puede ser muy costoso en términos de uso de memoria y rendimiento. El patrón Flyweight se puede utilizar en tales
+escenarios para diseñar una forma más eficiente de crear objetos.
+</pre>
+
+<li><a href="#builder">Decorator (Decorador)</a></li>
 <li><a href="#singleton">Module</a></li>
 </ul>
 
