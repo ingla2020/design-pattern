@@ -19,10 +19,13 @@ Patrones de Diseño
 Proposito
 <p dir="auto">Convierte la interfaz de una clase en otra interfaz que el cliente espera. El adaptador permite a las clases trabajar juntas, lo que de otra manera no podría hacerse debido a sus interfaces incompatibles.</p>
 </pre>
+<li><a href="#prototype">Facade (Fachada)</a></li>
+<pre>
+Fachada (Facade) es un tipo de patrón de diseño estructural. Viene motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.
+</pre>
 <li><a href="#abstract-factory">Bridge (Puente)</a></li>
 <li><a href="#builder">Composite (Objeto compuesto)</a></li>
 <li><a href="#builder">Decorator (Decorador)</a></li>
-<li><a href="#prototype">Facade (Fachada)</a></li>
 <li><a href="#singleton">Flyweight (Peso ligero)</a></li>
 <li><a href="#singleton">Proxy</a></li>
 <li><a href="#singleton">Module</a></li>
