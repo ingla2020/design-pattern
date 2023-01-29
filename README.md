@@ -72,6 +72,17 @@ requisitos entre ellos. Cada fábrica concreta implementa la interfaz de la fáb
 </pre>
 
 <li><a href="#prototype">Prototype</a></li>
+<pre>
+El patrón de diseño de prototipo se utiliza para especificar los tipos de objetos que se crearán utilizando una instancia prototípica y crear nuevos objetos.
+copiando este prototipo.
+El concepto es copiar un objeto existente en lugar de crear una nueva instancia desde cero, algo que puede incluir costosos
+operaciones. El objeto existente actúa como un prototipo y contiene el estado del objeto. El objeto recién copiado puede cambiar
+Mismas propiedades solo si es necesario. Este enfoque ahorra recursos y tiempo costosos, especialmente cuando la creación de objetos es una tarea pesada.
+proceso.
+En Java, hay ciertas formas de copiar un objeto para crear uno nuevo. Una forma de lograr esto es usando el Cloneable
+interfaz. Java proporciona el método de clonación, que un objeto hereda de la clase Object. Necesitas implementar el
+Interfaz clonable y anule este método de "clonación" según sus necesidades.
+</pre>
 </ul>
 
 
@@ -163,6 +174,24 @@ escenarios para diseñar una forma más eficiente de crear objetos.
 </pre>
 
 <li><a href="#builder">Decorator (Decorador)</a></li>
+<pre>
+La intención del patrón de diseño Decorator es adjuntar dinámicamente responsabilidades adicionales a un objeto. Los decoradores ofrecen una
+alternativa flexible a la subclasificación para ampliar la funcionalidad.
+El patrón Decorator se utiliza para extender la funcionalidad de un objeto dinámicamente sin tener que cambiar la clase original.
+fuente o utilizando la herencia. Esto se logra mediante la creación de un envoltorio de objeto denominado Decorador alrededor del objeto real.
+objeto.
+El objeto Decorator está diseñado para tener la misma interfaz que el objeto subyacente. Esto permite que un objeto cliente interactúe
+con el objeto Decorator exactamente de la misma manera que lo haría con el objeto real subyacente. El objeto Decorador
+contiene una referencia al objeto real. El objeto Decorator recibe todas las solicitudes (llamadas) de un cliente. A su vez, reenvía
+estas llamadas al objeto subyacente. El objeto Decorator agrega alguna funcionalidad adicional antes o después del reenvío
+solicitudes al objeto subyacente. Esto asegura que la funcionalidad adicional se pueda agregar a un objeto dado externamente en
+tiempo de ejecución sin modificar su estructura.
+Decorator evita la proliferación de subclases, lo que reduce la complejidad y la confusión. Es fácil agregar cualquier combinación de
+capacidades. La misma capacidad puede incluso agregarse dos veces. Se hace posible tener diferentes objetos decoradores para un determinado
+objeto simultáneamente. Un cliente puede elegir qué capacidades quiere enviando mensajes a un decorador apropiado
+</pre>
+
+
 <li><a href="#singleton">Module</a></li>
 </ul>
 
@@ -202,14 +231,190 @@ objeta la oportunidad de procesar la solicitud en algún orden secuencial. Aplic
 El objeto de la cadena recibe la solicitud y decide gestionarla o pasarla al siguiente objeto de la cadena. Él la solicitud fluye a través de todos los objetos de la cadena, uno tras otro, hasta que la solicitud es manejada por uno de los controladores de la cadena
 o la solicitud llega al final de la cadena sin ser procesada.
 </pre>
-<li><a href="#abstract-factory">Command (Orden)</a></li>
-<li><a href="#builder">Interpreter (Intérprete)</a></li>
-<li><a href="#builder">Iterator (Iterador)</a></li>
 <li><a href="#singleton">Memento (Recuerdo)</a></li>
-<li><a href="#singleton">State (Estado)</a></li>
-<li><a href="#singleton">Strategy (Estrategia)</a></li>
+<pre>
+La intención del patrón Memento es, sin violar la encapsulación, capturar y externalizar el estado interno de un objeto para que el
+el objeto se puede restaurar a este estado más tarde.
+
+• Almacena el estado interno del objeto originador. El memento puede almacenar tanto o tan poco del estado interno del originador como
+necesario a discreción de su originador.
+• Protege contra el acceso de objetos que no sean el originador. Los recuerdos tienen efectivamente dos interfaces. El cuidador ve un estrecho
+interfaz con el recuerdo: solo puede pasar el recuerdo a otros objetos. Originator, por el contrario, ve una interfaz amplia, una que
+le permite acceder a todos los datos necesarios para restaurarse a su estado anterior. Idealmente, solo el autor que produjo el recuerdo
+se le permitiría acceder al estado interno del recuerdo.
+
+Autor
+• Crea un recuerdo que contiene una instantánea de su estado interno actual.
+• Utiliza el recuerdo para restaurar su estado interno.
+
+Vigilante
+• Es responsable de la custodia del recuerdo.
+• Nunca opere ni examine el contenido de un recuerdo.
+
+Cuando un cliente desea guardar el estado del originador, solicita el estado actual del originador. El creador almacena todos
+aquellos atributos que se requieren para restaurar su estado en un objeto separado denominado Memento y lo devuelve al cliente.
+Por lo tanto, un Memento puede verse como un objeto que contiene el estado interno de otro objeto, en un momento determinado. un recuerdo
+El objeto debe ocultar los valores de la variable del originador de todos los objetos excepto del originador. En otras palabras, debe proteger su interior estado contra el acceso de objetos que no sean el originador. Con este fin, se debe diseñar un Memento para proporcionar
+acceso a otros objetos mientras que el originador puede acceder a su estado interno.
+
+Cuando el cliente desea restaurar el originador a su estado anterior, simplemente le devuelve el recuerdo al originador.
+El creador utiliza la información de estado contenida en el memento y vuelve al estado almacenado en el objeto Memento.
+</pre>
+
 <li><a href="#singleton">Template Method (Método plantilla)</a></li>
+<pre>
+El patrón de plantilla define el esqueleto de un algoritmo en una operación, delegando algunos pasos a las subclases. Método de plantilla
+permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar la estructura del algoritmo.
+El patrón del método de plantilla se puede usar en situaciones en las que hay un algoritmo, algunos de los cuales podrían implementarse
+de múltiples maneras diferentes. En tales escenarios, el patrón del método de plantilla sugiere mantener el esquema del algoritmo en un
+método separado denominado método de plantilla dentro de una clase, que puede denominarse clase de plantilla, omitiendo el
+implementaciones específicas de las porciones variantes (pasos que se pueden implementar de múltiples maneras diferentes) del algoritmo para
+diferentes subclases de esta clase.
+La clase Plantilla no necesariamente tiene que dejar la implementación a las subclases en su totalidad. En cambio, como parte de proporcionar
+el esquema del algoritmo, la clase Plantilla también puede proporcionar cierta cantidad de implementación que puede considerarse como
+invariable a través de diferentes implementaciones. Incluso puede proporcionar una implementación predeterminada para las piezas variantes, si corresponde. Solo
+los detalles específicos se implementarán dentro de diferentes subclases. Este tipo de implementación elimina la necesidad de duplicar
+código, lo que significa que se debe escribir una cantidad mínima de código.
+</pre>
+
+<li><a href="#singleton">State (Estado)</a></li>
+<pre>
+El patrón de diseño de estado permite que un objeto altere su comportamiento cuando cambia su estado interno. El objeto parecerá cambiar
+su clase
+El estado de un objeto se puede definir como su condición exacta en un momento dado, dependiendo de los valores de sus propiedades.
+o atributos. El conjunto de métodos implementados por una clase constituye el comportamiento de sus instancias. Siempre que haya un cambio en
+los valores de sus atributos, decimos que el estado de un objeto ha cambiado.
+El patrón State es útil para diseñar una estructura eficiente para una clase, una instancia típica de la cual puede existir en muchos entornos diferentes.
+estados y exhiben un comportamiento diferente dependiendo del estado en el que se encuentre. En otras palabras, en el caso de un objeto de tal clase, algunos
+o todo su comportamiento está completamente influenciado por su estado actual. En la terminología de patrones de diseño de estado, dicha clase se denomina
+como una clase de contexto. Un objeto de Contexto puede alterar su comportamiento cuando hay un cambio en su estado interno y también es referido
+como un objeto con estado.
+El patrón State sugiere mover el comportamiento específico del estado fuera de la clase Context a un conjunto de clases separadas a las que se hace referencia
+como clases de estado. Cada uno de los muchos estados diferentes en los que puede existir un objeto de contexto se puede asignar a un estado separado
+clase. La implementación de una clase State contiene el comportamiento del contexto que es específico de un estado dado, no el comportamiento general.
+Patrones de diseño Java 126 / 173
+del propio contexto. El contexto actúa como cliente del conjunto de objetos de estado en el sentido de que hace uso de diferentes objetos de estado.
+para ofrecer el comportamiento específico del estado necesario a un objeto de aplicación que utiliza el contexto de manera transparente.
+Al encapsular el comportamiento específico del estado en clases separadas, la implementación del contexto se vuelve más fácil de leer: libre de demasiado
+muchas sentencias condicionales como construcciones if-else o switch-case. Cuando se crea por primera vez un objeto de contexto, se inicializa solo
+con su objeto State inicial. Este objeto de estado se convierte en el objeto de estado actual para el contexto. Al reemplazar el estado actual
+objeto con un nuevo objeto State, el contexto pasa a un nuevo estado.
+La aplicación cliente que utiliza el contexto no es responsable de especificar el objeto de estado actual para el contexto, sino que cada
+de las clases de estado que representan estados específicos se espera que proporcionen la implementación necesaria para la transición del contexto
+a otros estados. Cuando un objeto de aplicación realiza una llamada a un método de contexto (comportamiento), reenvía la llamada al método a su
+objeto de estado actual.
+</pre>
+
+<li><a href="#singleton">Strategy (Estrategia)</a></li>
+<pre>
+El patrón de diseño de estrategia define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables. Estrategia
+permite que el algoritmo varíe independientemente de los clientes que lo utilicen.
+El patrón de estrategia es útil cuando hay un conjunto de algoritmos relacionados y un objeto de cliente debe poder elegir dinámicamente
+y elija un algoritmo de este conjunto que se adapte a su necesidad actual. El patrón de Estrategia sugiere mantener la implementación de
+cada uno de los algoritmos en una clase separada. Cada algoritmo de este tipo encapsulado en una clase separada se denomina estrategia.
+Un objeto que utiliza un objeto de estrategia a menudo se denomina objeto de contexto.
+Con diferentes objetos de estrategia en su lugar, cambiar el comportamiento de un objeto de contexto es simplemente una cuestión de cambiar su Str
+objeto de estrategia al que implementa el algoritmo requerido. Para habilitar un objeto de contexto para acceder a diferentes estrategias
+todos los objetos de estrategia deben estar diseñados para ofrecer la misma interfaz. En la programación Java
+lenguaje, esto se puede lograr mediante el diseño de cada objeto de la estrategia, ya sea como un implementador de una interfaz común o como
+una subclase de una clase abstracta común que declara la interfaz común requerida.
+Una vez que el grupo de algoritmos relacionados se encapsula en un conjunto de clases de estrategia en una jerarquía de clases, un cliente puede elegir entre
+entre estos algoritmos seleccionando e instanciando una clase de estrategia apropiada. Para alterar el comportamiento del contexto,
+un objeto de cliente necesita configurar el contexto con la instancia de estrategia seleccionada. Este tipo de arreglo completamente
+separa la implementación de un algoritmo del contexto que lo usa. Como resultado, cuando se cambia la implementación de un algoritmo existente o se agrega un nuevo algoritmo al grupo, tanto el contexto como el objeto del cliente (que usa el contexto)
+permanecer inafectado.
+</pre>
+
+<li><a href="#abstract-factory">Command (Orden)</a></li>
+<pre>
+La intención del patrón de diseño de comando es encapsular una solicitud como un objeto, lo que permite al desarrollador parametrizar
+clientes con diferentes solicitudes, solicitudes de cola o registro, y admite operaciones que se pueden deshacer.
+En general, una aplicación orientada a objetos consta de un conjunto de objetos que interactúan, cada uno de los cuales ofrece una funcionalidad limitada y enfocada. En
+En respuesta a la interacción del usuario, la aplicación lleva a cabo algún tipo de procesamiento. Para ello, la aplicación hace uso de
+los servicios de diferentes objetos para el requisito de procesamiento.
+En términos de implementación, la aplicación puede depender de un objeto designado que invoca métodos en estos objetos pasando
+los datos requeridos como argumentos. Este objeto designado puede denominarse invocador, ya que invoca operaciones en diferentes
+objetos. El invocador puede ser tratado como parte de la aplicación cliente. El conjunto de objetos que realmente contienen la implementación.
+para ofrecer los servicios necesarios para el procesamiento de solicitudes se pueden denominar objetos receptores.
+Usando el patrón de comando, el invocador que emite una solicitud en nombre del cliente y el conjunto de receptores de prestación de servicios
+los objetos se pueden desacoplar. El patrón Comando sugiere crear una abstracción para el procesamiento a realizar o la acción
+a tomar en respuesta a las solicitudes de los clientes. Esta abstracción se puede diseñar para declarar una interfaz común a implementar
+por diferentes implementadores concretos denominados objetos Command. Cada objeto Command representa un tipo diferente de cliente
+solicitud y la tramitación correspondiente.
+Un objeto Comando dado es responsable de ofrecer la funcionalidad requerida para procesar la solicitud que representa, pero no
+no contienen la implementación real de la funcionalidad. Los objetos de comando hacen uso de los objetos de receptor para ofrecer este
+funcionalidad
+</pre>
+
+<li><a href="#builder">Interpreter (Intérprete)</a></li>
+<pre>
+Dado un idioma, defina una representación para su gramática junto con un intérprete que use la representación para interpretar
+oraciones en el idioma.
+En general, los idiomas se componen de un conjunto de reglas gramaticales. Se pueden construir diferentes oraciones siguiendo esta gramática.
+normas. A veces, una aplicación puede necesitar procesar instancias repetidas de solicitudes similares que son una combinación de un conjunto de
+reglas gramaticales. Estas solicitudes son distintas pero similares en el sentido de que todas están compuestas usando el mismo conjunto de reglas.
+Un ejemplo simple de esto sería el conjunto de diferentes expresiones aritméticas enviadas a un programa de calculadora. aunque cada uno
+dicha expresión es diferente, todas están construidas utilizando las reglas básicas que componen la gramática del lenguaje de la aritmética
+expresiones
+En tales casos, en lugar de tratar cada combinación distinta de reglas como un caso separado, puede ser beneficioso para la aplicación
+tener la capacidad de interpretar una combinación genérica de reglas. El patrón Intérprete se puede usar para diseñar esta habilidad en un
+aplicación para que otras aplicaciones y usuarios puedan especificar operaciones usando un lenguaje simple definido por un conjunto de reglas gramaticales.
+Se puede diseñar una jerarquía de clases para representar el conjunto de reglas gramaticales con cada clase en la jerarquía representando un
+Regla gramátical. Se puede diseñar un módulo de intérprete para interpretar las oraciones construidas utilizando la jerarquía de clases diseñada
+anterior y realiza las operaciones necesarias.
+Debido a que una clase diferente representa cada regla gramatical, el número de clases aumenta con el número de reglas gramaticales. A
+un lenguaje con reglas gramaticales extensas y complejas requiere un gran número de clases. El patrón Intérprete funciona mejor cuando la gramática es simple. Tener una gramática simple evita la necesidad de tener muchas clases correspondientes al conjunto complejo de reglas
+involucrados, que son difíciles de administrar y mantener.
+</pre>
+
+<li><a href="#builder">Iterator (Iterador)</a></li>
+<bre>
+La intención del patrón de diseño de iterador es proporcionar una forma de acceder a los elementos de un objeto agregado secuencialmente sin
+exponer su representación subyacente.
+El patrón Iterator permite que un objeto cliente acceda al contenido de un contenedor de manera secuencial, sin tener ningún
+conocimiento sobre la representación interna de sus contenidos. El término contenedor, utilizado anteriormente, puede definirse simplemente como una colección
+de datos u objetos. Los objetos dentro del contenedor podrían a su vez ser colecciones, convirtiéndolo en una colección de colecciones.
+El patrón Iterator permite que un objeto cliente atraviese esta colección de objetos (o el contenedor) sin tener la
+contenedor para revelar cómo se almacenan los datos internamente. Para lograr esto, el patrón Iterator sugiere que un objeto Container
+debe diseñarse para proporcionar una interfaz pública en forma de un objeto Iterator para que diferentes objetos de cliente accedan a su contenido.
+Un objeto Iterator contiene métodos públicos para permitir que un objeto de cliente navegue por la lista de objetos dentro del contenedor.
+• Define una interfaz para acceder y atravesar elementos.
+iterador concreto
+• Implementa la interfaz Iterator.
+• Realiza un seguimiento de la posición actual en el recorrido del agregado.
+Agregar
+• Define una interfaz para crear un objeto Iterator.
+ConcretoAgregado
+• Implementa la interfaz de creación de Iterator para devolver una instancia del ConcreteIterator adecuado.
+</pre>
 <li><a href="#singleton">Visitor (Visitante)</a></li>
+<pre>
+La intención del patrón de diseño de visitante es representar una operación que se realizará en los elementos de una estructura de objeto. Visitante
+le permite definir una nueva operación sin cambiar las clases de los elementos sobre los que opera.
+El patrón Visitor es útil cuando se diseña una operación en una colección heterogénea de objetos de una jerarquía de clases. Él
+El patrón Visitor permite definir la operación sin cambiar la clase de ninguno de los objetos de la colección. Cumplir
+esto, el patrón Visitor sugiere definir la operación en una clase separada denominada clase visitante. Esto separa la operación
+de la colección de objetos en la que opera. Por cada nueva operación que se defina, se crea una nueva clase de visitante. Desde el
+se va a realizar una operación en un conjunto de objetos, el visitante necesita una forma de acceder a los miembros públicos de estos objetos.
+Este requisito se puede abordar implementando las siguientes dos ideas de diseño
+
+Visitante
+• Declara una operación de Visita para cada clase de ConcreteElement en la estructura del objeto. El nombre y la firma de la operación.
+identifica la clase que envía la solicitud de visita al visitante. Que permite al visitante determinar la clase concreta de la
+elemento que se visita. Entonces el visitante puede acceder al elemento directamente a través de su interfaz particular.
+ConcretoVisitante
+• Implementa cada operación declarada por el Visitante. Cada operación implementa un fragmento del algoritmo definido para el
+correspondiente clase de objeto en la estructura. ConcreteVisitor proporciona el contexto para el algoritmo y almacena su local
+Expresar. Este estado a menudo acumula resultados durante el recorrido de la estructura.
+Elemento
+• Define una operación de Aceptar que toma como argumento a un visitante.
+HormigónElemento
+• Implementa una operación de Aceptar que toma como argumento a un visitante.
+ObjetoEstructura
+• Puede enumerar sus elementos.
+• Puede proporcionar una interfaz de alto nivel para permitir que el visitante visite sus elementos.
+• Puede ser un compuesto o una colección, como una lista o un conjunto
+</pre>
 </ul>
 
 </article>
