@@ -1,5 +1,110 @@
 # design-pattern
 Patrones de Diseño
+
+<pre>
+
+¿Qué son los patrones de diseño?
+
+Como desarrollador Orientado a Objetos, podemos pensar que nuestro código contiene todos los beneficios proporcionados por el lenguaje Orientado a Objetos.
+El código que hemos escrito es lo suficientemente flexible como para que podamos realizar cualquier cambio con menos o ningún dolor. Nuestro código es reutilizable por lo que
+que podemos reutilizarlo en cualquier lugar sin ningún problema. Podemos mantener nuestro código fácilmente y cualquier cambio en una parte del código
+no afectará a ninguna otra parte del código.
+Desafortunadamente, estas ventajas no vienen por sí solas. Como desarrollador, es nuestra responsabilidad diseñar el código de tal manera
+que permiten que nuestro código sea flexible, fácil de mantener y reutilizable.
+Diseñar es un arte y viene con la experiencia. Pero hay un conjunto de soluciones ya escritas por algunos de los avanzados
+y desarrolladores experimentados mientras enfrentan y resuelven problemas de diseño similares. Estas soluciones se conocen como patrones de diseño.
+Los Patrones de Diseño es la experiencia en el diseño de código orientado a objetos.
+Los patrones de diseño son una solución general reutilizable para problemas comunes. Estas son las mejores prácticas, utilizadas por los desarrolladores experimentados. Los patrones no son un código completo, pero se pueden usar como una plantilla que se puede aplicar a un problema. Patrones son reutilizables; se pueden aplicar a un tipo similar de problema de diseño independientemente de cualquier dominio. En otras palabras, podemos pensar en
+patrones como un documento formal que contiene problemas de diseño recurrentes y sus soluciones. Un patrón utilizado en un contexto práctico.
+puede ser reutilizable en otros contextos también.
+Christopher había dicho que “Cada patrón describe un problema que ocurre una y otra vez en nuestro entorno, y luego
+describe el núcleo de la solución a ese problema, de tal manera que puede usar esta solución un millón de veces, sin nunca
+haciéndolo de la misma manera dos veces”.
+En general, un patrón tiene cuatro elementos esenciales:
+• Nombre del patrón, se utiliza para proporcionar un nombre único y significativo al patrón que define un problema de diseño y una solución.
+para ello. Nombrar un patrón de diseño ayuda a ser referido a otros fácilmente. También se vuelve fácil proporcionar documentación para
+y la palabra de vocabulario correcta hace que sea más fácil pensar en el diseño.
+• El problema describe cuándo aplicar el patrón. Explica el problema y su contexto. Podría describir un diseño específico
+problemas tales como cómo representar algoritmos como objetos. Podría describir una clase o estructuras de objetos que son sintomáticas de
+un diseño inflexible. A veces, el problema incluirá una lista de condiciones que deben cumplirse antes de que tenga sentido aplicar
+el patrón.
+• La solución describe los elementos que conforman el diseño, sus relaciones, responsabilidades y colaboraciones. Él
+La solución no es el código completo, pero funciona como una plantilla que se puede completar con el código. En cambio, el patrón proporciona una
+descripción abstracta de un problema de diseño y cómo lo resuelve una disposición general de elementos (clases y objetos en nuestro caso).
+• Los resultados y consecuencias de la aplicación del patrón. Las consecuencias para el software a menudo se refieren a compensaciones de espacio y tiempo. También pueden abordar problemas de idioma e implementación. Dado que la reutilización suele ser un factor en el diseño orientado a objetos, la
+Las consecuencias de un patrón incluyen su impacto en la flexibilidad, extensibilidad o portabilidad de un sistema. Enumerar estas consecuencias
+le ayuda explícitamente a comprenderlos y evaluarlos.
+
+
+Categorización de patrones
+Los patrones de diseño se pueden clasificar en las siguientes categorías:
+• Patrones de creación
+• Patrones estructurales
+• Patrones de comportamiento
+
+<h2><b> Patrones de creación</b></h2>
+Los patrones de diseño creacional se utilizan para diseñar el proceso de instanciación de objetos. El patrón creacional usa la herencia para
+variar la creación de objetos.
+Hay dos temas recurrentes en estos patrones. Primero, todos encapsulan el conocimiento sobre qué clases concretas el sistema
+usos. En segundo lugar, ocultan cómo se crean y ensamblan las instancias de estas clases. Todo el sistema en general sabe acerca de la
+Los objetos son sus interfaces definidas por clases abstractas. En consecuencia, los patrones de creación te dan mucha flexibilidad en lo que
+se crea, quién lo crea, cómo se crea y cuándo.
+Puede haber algunos casos en los que dos o más patrones parezcan adecuados como solución a un problema. En otras ocasiones, los dos patrones
+se complementan por ejemplo; Builder se puede usar con otro patrón para implementar qué componentes se construirán.
+
+<h2><b> Patrones estructurales</h2></b>
+Los patrones estructurales se ocupan de cómo se componen las clases y los objetos para formar estructuras más grandes. Patrones de clase estructural
+use la herencia para componer interfaces o implementaciones. Como un ejemplo simple, considere cómo la herencia múltiple mezcla dos o
+más clases en una. El resultado es una clase que combina las propiedades de sus clases principales. Este patrón es particularmente útil
+para hacer que las bibliotecas de clases desarrolladas de forma independiente funcionen juntas.
+En lugar de componer interfaces o implementaciones, los patrones de objetos estructurales describen formas de componer objetos para realizar nuevos
+funcionalidad. La flexibilidad añadida de la composición de objetos proviene de la capacidad de cambiar la composición en tiempo de ejecución, lo que
+es imposible con la composición de clase estática.
+
+<h2><b>Patrones de comportamiento</h2></b>
+Los patrones de comportamiento están relacionados con los algoritmos y la asignación de responsabilidades entre objetos. Patrones de comportamiento
+describir no solo patrones de objetos o clases, sino también los patrones de comunicación entre ellos. Estos patrones caracterizan
+flujo de control complejo que es difícil de seguir en tiempo de ejecución. Cambian su enfoque lejos del flujo de control para permitirle concentrarse
+solo en la forma en que los objetos están interconectados
+
+Los patrones de objetos de comportamiento utilizan la composición de objetos en lugar de la herencia. Algunos describen cómo coopera un grupo de objetos iguales
+realizar una tarea que ningún objeto individual puede realizar por sí mismo. Una cuestión importante aquí es cómo los objetos pares saben acerca de cada uno.
+otro. Los pares podrían mantener referencias explícitas entre sí, pero eso aumentaría su acoplamiento. En extremo, todo objeto
+sabría de todos los demás. El patrón Mediator evita esto introduciendo un objeto mediador entre pares. el mediador
+proporciona la dirección indirecta necesaria para un acoplamiento flojo.
+Las siguientes tablas muestran la lista de patrones en sus respectivas categorías:
+
+<a2>Creational Patterns</a2>
+Abstract Factory
+Builder
+Factory Method
+Prototype
+Singleton
+
+<a2>Structural Patterns</a2>
+Adapter
+Bridge
+Composite
+Decorator
+Facade
+Flyweight
+Proxy
+
+<a2>Behavioral Patterns</a2>
+Chain of Responsibility
+Command
+Interpreter
+Iterator
+Mediator
+Memento
+Observer
+State
+Strategy
+Template Method
+Visitor
+
+
+</pre>
 <article class="markdown-body entry-content container-lg" itemprop="text"><h1 dir="auto"><a id="user-content-design-pattern" class="anchor" aria-hidden="true" href="#design-pattern"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>design-pattern</h1>
 <p dir="auto">Patrones de Diseño</p>
 
